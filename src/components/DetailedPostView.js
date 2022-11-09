@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useOutletContext, useParams } from "react-router-dom";
-import { editPost } from './index';
+import  EditPost  from './EditPost.js';
 
 const DetailedPostView = () => {
     const [,, profileData, setProfileData] = useOutletContext();
@@ -26,13 +26,15 @@ const DetailedPostView = () => {
         }
         findSpecificPost()
     }, [])
-
+ 
     return (
         <div>
             <button onClick={handleToggleEditForm}>Edit Post</button>
+            
+           
 
             {
-                toggleEditForm ? <editPost indivPost={detailedSpecificPost} setProfileData={setProfileData} handleToggleEditForm=
+                toggleEditForm ? <EditPost indivPost={detailedSpecificPost} setProfileData={setProfileData} handleToggleEditForm=
                 {handleToggleEditForm}/> : null
             }
         <div>

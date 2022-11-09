@@ -29,7 +29,7 @@ const EditPost = (props) => {
         const translatedEditPosts = await editedPosts.json();
 
         props.setProfileData([,,,translatedEditPosts.data.posts])
-        props.handleToggledEditForm();
+       // props.handleToggledEditForm();
 
         navigate("/profile")
         } catch (error) {

@@ -8,10 +8,10 @@ const Homepage = () => {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await fetch("https://strangers-things.herokuapp.com/api/2209-FTB-MT-WEB-FT/posts");
+                const response = await fetch("https://strangers-things.herokuapp.com/api/2209-FTB-MT-WEB-FT/Posts");
                 const data = await response.json();
                 console.log("My data: ", data)
-                setPosts(data.data,posts);
+                setPosts(data.data.posts);
             } catch (error) {
                 console.log(error);
             }
@@ -25,10 +25,10 @@ const Homepage = () => {
                 const response = await fetch("https://strangers-things.herokuapp.com/api/2209-FTB-MT-WEB-FT/users/me", {
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: 'Bearer ${localStorage.getItem("token")}'
+                        Authorization: `Bearer ${localStorage.getItem("token")}`
                     }
                 })
-                const data = await responsee.json();
+                const data = await response.json();
                 console.log("Profile data: ", data);
                 setProfileData(data.data);
             } catch (error) {

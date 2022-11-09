@@ -36,7 +36,7 @@ const NewPost = () => {
 
             console.log("This is newPosts data: ",)
 
-            setPosts([,,,posts, data.data.post])
+            setPosts([...posts, data.data.post])
 
             navigate("/posts")
         } catch (error) {
